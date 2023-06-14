@@ -15,7 +15,13 @@ class PopularMovies extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('Filmes Populares'),
+          const Padding(
+            padding: EdgeInsets.only(left: 8.0),
+            child: Text('Filmes Populares'),
+          ),
+          
+          const SizedBox(height: 10.0,),
+
           SizedBox(
             height: 300,
             width: MediaQuery.of(context).size.width,
@@ -25,35 +31,32 @@ class PopularMovies extends StatelessWidget {
                 if (snapshot.hasError) {
                   return Text('Ocorreu um erro! ${snapshot.error}');
                 } else if (snapshot.hasData) {
-                  final item = snapshot.data as List<MoviesModels>;
+                  final itens = snapshot.data as List<MoviesModels>;
                   return ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: item.length,
+                    itemCount: itens.length,
                     itemBuilder: (context, index) {
                       return InkWell(
                         onTap: () {},
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                          child: SizedBox(
-                            width: 140,
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image:
-                                          NetworkImage(item[index].backdropPath),
-                                    ),
+                        child: SizedBox(
+                          width: 150,
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 200,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image:
+                                        NetworkImage(itens[index].backdropPath),
                                   ),
                                 ),
-                                const SizedBox(height: 5.0,),
-                                SizedBox(
-                                  height: 70,
-                                  child: Text(item[index].title),
-                                ),
-                              ],
-                            ),
+                              ),
+                              const SizedBox(height: 5.0),
+                              SizedBox(
+                                height: 70,
+                                child: Text(itens[index].title),
+                              ),
+                            ],
                           ),
                         ),
                       );

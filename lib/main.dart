@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tmdb_movies/ui/widgets/popular_movies.dart';
+import 'package:tmdb_movies/ui/widgets/top_rated_moveis.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
         ),
         body: ListView(
           children: const [
-            PopularMovies()
+            PopularMovies(),
+            TopRated(),
           ],
         ),
       ),
