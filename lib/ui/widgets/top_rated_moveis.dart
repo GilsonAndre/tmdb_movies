@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tmdb_movies/data/models/movies_models.dart';
 import 'package:tmdb_movies/data/repository/api_repository.dart';
 
+import '../pages/description_page.dart';
+
 const apiKeyTopRated = 'https://api.themoviedb.org/3/movie/top_rated?';
 
 class TopRated extends StatelessWidget {
@@ -37,7 +39,20 @@ class TopRated extends StatelessWidget {
                     itemCount: itens.length,
                     itemBuilder: (context, index) {
                       return InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Description(
+                                title: itens[index].title,
+                                overview: itens[index].overview,
+                                voteAverage: itens[index].voteAverage,
+                                backdropPath: itens[index].backdropPath,
+                                posterPath: itens[index].posterPath,
+                              ),
+                            ),
+                          );
+                        },
                         child: SizedBox(
                           width: 150,
                           child: Column(
@@ -47,7 +62,7 @@ class TopRated extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
                                     image:
-                                        NetworkImage(itens[index].backdropPath),
+                                        NetworkImage(itens[index].posterPath),
                                   ),
                                 ),
                               ),
