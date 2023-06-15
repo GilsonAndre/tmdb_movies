@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tmdb_movies/ui/widgets/modified_text.dart';
 
+import '../resources/theme.dart';
+
 class Description extends StatelessWidget {
   const Description({
     super.key,
@@ -18,9 +20,11 @@ class Description extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final AppTheme appTheme = AppTheme();
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: appTheme.theme(),
       home: Scaffold(
-        backgroundColor: Colors.black,
         body: ListView(
           children: [
             Stack(

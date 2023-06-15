@@ -4,7 +4,9 @@ import 'package:tmdb_movies/ui/widgets/popular_movies.dart';
 import 'package:tmdb_movies/ui/widgets/top_rated_moveis.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -14,6 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final AppTheme appTheme = AppTheme();
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: appTheme.theme(),
       home: Scaffold(
         appBar: AppBar(

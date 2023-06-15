@@ -9,7 +9,7 @@ class AppTheme {
         color: Colors.black,
         elevation: 0.0
       ),
-      scaffoldBackgroundColor: Colors.black
+      scaffoldBackgroundColor: Colors.black,
     );
   }
 }
