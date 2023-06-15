@@ -27,7 +27,7 @@ class Description extends StatelessWidget {
               children: [
                 Positioned(
                   child: SizedBox(
-                    height: MediaQuery.of(context).size.height,
+                    height: 700,
                     width: MediaQuery.of(context).size.width,
                     child: Image.network(
                       posterPath,

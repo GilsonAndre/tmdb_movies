@@ -5,7 +5,7 @@ import 'package:tmdb_movies/ui/pages/description_page.dart';
 
 import 'modified_text.dart';
 
-const apiKeyTopRated = 'https://api.themoviedb.org/3/movie/top_rated?';
+const apiKeyTopRated = 'https://api.themoviedb.org/3/movie/top_rated';
 
 class TopRated extends StatelessWidget {
   const TopRated({super.key});
