@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tmdb_movies/ui/resources/theme.dart';
 import 'package:tmdb_movies/ui/widgets/popular_movies.dart';
 import 'package:tmdb_movies/ui/widgets/top_rated_moveis.dart';
 
@@ -11,7 +12,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final AppTheme appTheme = AppTheme();
     return MaterialApp(
+      theme: appTheme.theme(),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Filmes tmdb'),

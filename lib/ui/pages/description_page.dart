@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tmdb_movies/ui/widgets/modified_text.dart';
 
 class Description extends StatelessWidget {
   const Description({
@@ -19,6 +20,7 @@ class Description extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.black,
         body: ListView(
           children: [
             Stack(
@@ -36,16 +38,24 @@ class Description extends StatelessWidget {
                 Positioned(
                   bottom: 10.0,
                   child: Padding(
-                    padding: const EdgeInsets.only(left:8.0),
-                    child: Text('⭐ Nota $voteAverage', style: const TextStyle(color: Colors.white),),
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: ModifiedText(
+                      text: '⭐ Nota $voteAverage',
+                      size: 15,
+                    ),
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 10.0,),
+            const SizedBox(
+              height: 10.0,
+            ),
             Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: Text(title),
+              padding: const EdgeInsets.fromLTRB(8.0, 8.0, 0.0, 16.0),
+              child: ModifiedText(
+                text: title,
+                size: 22,
+              ),
             ),
             Row(
               children: [
@@ -53,9 +63,17 @@ class Description extends StatelessWidget {
                   height: 250,
                   width: 150,
                   padding: const EdgeInsets.all(8.0),
-                  child: Image.network(backdropPath),
+                  child: Image.network(
+                    backdropPath,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-                Flexible(child: Text(overview)),
+                Flexible(
+                  child: ModifiedText(
+                    text: overview,
+                    size: 15,
+                  ),
+                ),
               ],
             )
           ],
@@ -64,4 +82,3 @@ class Description extends StatelessWidget {
     );
   }
 }
-

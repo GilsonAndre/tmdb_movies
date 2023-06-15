@@ -19,6 +19,6 @@ class MoviesModels {
       overview: map['overview'],
       voteAverage: map['vote_average'].toString(),
       posterPath: 'https://image.tmdb.org/t/p/original/${map['poster_path']}',
-      backdropPath: 'https://image.tmdb.org/t/p/w220_and_h330_face/${map['backdrop_path']}',
+      backdropPath: 'https://image.tmdb.org/t/p/original/${map['backdrop_path']}',
     );
 }

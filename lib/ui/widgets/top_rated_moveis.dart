@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tmdb_movies/data/models/movies_models.dart';
 import 'package:tmdb_movies/data/repository/api_repository.dart';
+import 'package:tmdb_movies/ui/pages/description_page.dart';
 
-import '../pages/description_page.dart';
+import 'modified_text.dart';
 
 const apiKeyTopRated = 'https://api.themoviedb.org/3/movie/top_rated?';
 
@@ -19,7 +20,10 @@ class TopRated extends StatelessWidget {
         children: [
           const Padding(
             padding: EdgeInsets.only(left: 8.0),
-            child: Text('Filmes Melhor Avaliados'),
+            child: ModifiedText(
+              text: 'Filmes Mais Avaliados',
+              size: 22,
+            ),
           ),
 
           const SizedBox(height: 10.0,),
@@ -68,8 +72,11 @@ class TopRated extends StatelessWidget {
                               ),
                               SizedBox(
                                 height: 70,
-                                child: Text(itens[index].title),
-                              )
+                                child: ModifiedText(
+                                  text: itens[index].title,
+                                  size: 17,
+                                ),
+                              ),
                             ],
                           ),
                         ),

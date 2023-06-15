@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tmdb_movies/data/models/movies_models.dart';
 import 'package:tmdb_movies/data/repository/api_repository.dart';
 import 'package:tmdb_movies/ui/pages/description_page.dart';
+import 'package:tmdb_movies/ui/widgets/modified_text.dart';
 
 const apiKeyPopular = 'https://api.themoviedb.org/3/movie/popular?';
 
@@ -18,7 +19,10 @@ class PopularMovies extends StatelessWidget {
         children: [
           const Padding(
             padding: EdgeInsets.only(left: 8.0),
-            child: Text('Filmes Populares'),
+            child: ModifiedText(
+              text: 'Filmes Populares',
+              size: 22,
+            ),
           ),
           const SizedBox(
             height: 10.0,
@@ -68,7 +72,10 @@ class PopularMovies extends StatelessWidget {
                               const SizedBox(height: 5.0),
                               SizedBox(
                                 height: 70,
-                                child: Text(itens[index].title),
+                                child: ModifiedText(
+                                  text: itens[index].title,
+                                  size: 17,
+                                ),
                               ),
                             ],
                           ),
