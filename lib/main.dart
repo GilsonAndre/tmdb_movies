@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tmdb_movies/ui/resources/theme.dart';
 import 'package:tmdb_movies/ui/widgets/popular_movies.dart';
 import 'package:tmdb_movies/ui/widgets/top_rated_moveis.dart';
+import 'package:tmdb_movies/ui/widgets/upcoming_movies.dart';
 
 void main() {
   runApp(
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
           children: const [
             PopularMovies(),
             TopRated(),
+            UpcomingMovies(),
           ],
         ),
       ),
