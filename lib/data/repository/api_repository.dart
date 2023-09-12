@@ -6,9 +6,7 @@ class ApiRepository {
   final dio = Dio();
 
   Future<List<MoviesModels>> getMovies(String key) async {
-    final response = await dio.get(
-      key, 
-      queryParameters: {
+    final response = await dio.get(key, queryParameters: {
       'api_key': 'fcbd2848e04db52bc7b9eaa897532e38',
       'language': 'pt-BR',
       'page': '1'
